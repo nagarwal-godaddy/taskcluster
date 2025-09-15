@@ -71,7 +71,7 @@ func (dtf *D2GTaskFeature) Start() *CommandExecutionError {
 	imageArtifactPath := filepath.Join(taskContext.TaskDir, "dockerimage")
 	if _, err := os.Stat(imageArtifactPath); os.IsNotExist(err) {
 		// DockerImageName or NamedDockerImage, no image artifact
-		key = dtf.task.D2GInfo.Image.String(false)
+		key = dtf.task.D2GInfo.Image.String()
 	} else {
 		// DockerImageArtifact or IndexedDockerImage
 		isImageArtifact = true
